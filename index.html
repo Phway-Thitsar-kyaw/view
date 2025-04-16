@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=1024">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Donation For Earthquake Myanmar</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -21,6 +21,7 @@
     .hero-image {
       background-image: url('img/bg1.jpg');
       background-size: cover; 
+      background-position: center;
      }
     .activity-card {
       position: relative;
@@ -34,7 +35,7 @@
       height: 100%;
       object-fit: cover;
       filter: brightness(0.7);
-      transition: 0.3s ease;
+      transition: 0.3s;
     }
     .activity-card:hover img {
       transform: scale(1.05);
@@ -46,51 +47,77 @@
       font-weight: 600;
       font-size: 1.1rem;
     }
-
-    /* Force 3 columns even on mobile */
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-    }
     .card{
-      width:18rem;
+      border-style: none;
+      box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+    }
+    .navbar-toggler:focus,.navbar-toggler:active
+    {
+      outline: none;
+      box-shadow: none;
+      border: none;
     }
     .footer{
       text-align: center;
+    }
+    @media (max-width: 575.98px) {
+      .header{
+        font-size:22px;
+        text-wrap: nowrap;
+      }
+      .head-nav{
+        font-size:16px;
+      }
+      .head-card{
+        font-size:14px;
+      }
+      .activity-title {
+        font-size:14px;
+      }
+      .card-title{
+        font-size:16px;
+      }
+      p{
+        font-size:12px;
+      }
+      .btn{
+        font-size:12px;
+      }
     }
   </style>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-white px-4">
     <i class="fa-solid fa-house-chimney-crack"></i>
-    <a class="navbar-brand fw-bold me-3" href="#"> ミャンマーへの寄付</a> 
-
+    <a class="navbar-brand fw-bold head-nav" href="#"> ミャンマーへの寄付</a> 
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item me-3"><a class="nav-link active" aria-current="page" href="#">ホーム</a></li>
-        <li class="nav-item me-3"><a class="nav-link" href="#">ギャラリー</a></li>
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">ホーム</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">ギャラリー</a></li>
         <li class="nav-item"><a class="nav-link" href="#">お問い合わせ</a></li>
       </ul>
     </div>
   </nav>
   <div class="container-fluid mb-5">
     <section class="hero-section">
-        <div class="row hero-image">
-          <div class="col-7 justify-content-center p-5">
-            <h1 class="fw-bold pt-3">ミャンマー地震被災者支援</h1>
+        <div class="row hero-image justify-content-center p-3">
+            <h3 class="fw-bold pt-3 header">ミャンマー地震被災者支援</h3>
             <p class="pt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, quaerat necessitatibus voluptatem laborum quas distinctio
                fugiat delectus facilis dolor laboriosam incidunt ab iusto</p>
-          </div>
-          <div class="col-5 p-3">
-            <img src="img/ChatGPT_Donate-clearbg.png" class="img-fluid" alt="">
-          </div>
+            <img src="img/ChatGPT_Donate-clearbg.png" style="width:150px" class="img-fluid float-sm-end" alt="">
         </div>
     </section>
     <section class="container my-4">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h5 class="fw-bold head-card">Damaged Places</h5>
+        <a href="details.html" class="text-muted text-decoration-none head-card">すべてを見る</a>
+      </div>
       <div class="row">
         <!-- Card 1 -->
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <div class="col-12 col-sm-6 col-md-3 mb-4">
           <div class="card h-100">
             <img src="img/eq3.jpg" class="card-img-top" alt="">
             <div class="card-body">
@@ -98,12 +125,12 @@
               <p class="card-text">
                 Some quick example text to build on the card title and make up the bulk of the card's content.
               </p>
-              <a href="#" class="btn btn-danger">View Details</a>
+              <a href="#" class="btn btn-danger">もっと見る</a>
             </div>
           </div>
         </div>
         <!-- Card 2 -->
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <div class="col-12 col-sm-6 col-md-3 mb-4">
           <div class="card h-100">
             <img src="img/eq4.jpg" class="card-img-top" alt="">
             <div class="card-body">
@@ -111,12 +138,12 @@
               <p class="card-text">
                 Some quick example text to build on the card title and make up the bulk of the card's content.
               </p>
-              <a href="#" class="btn btn-danger">View Details</a>
+              <a href="#" class="btn btn-danger">もっと見る</a>
             </div>
           </div>
         </div>
         <!-- Card 3 -->
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <div class="col-12 col-sm-6 col-md-3 mb-4">
           <div class="card h-100">
             <img src="img/eq5.jpg" class="card-img-top" alt="">
             <div class="card-body">
@@ -124,48 +151,79 @@
               <p class="card-text">
                 Some quick example text to build on the card title and make up the bulk of the card's content.
               </p>
-              <a href="#" class="btn btn-danger">View Details</a>
+              <a href="#" class="btn btn-danger">もっと見る</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="col-12 col-sm-6 col-md-3 mb-4">
+          <div class="card h-100">
+            <img src="img/eq5.jpg" class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the bulk of the card's content.
+              </p>
+              <a href="#" class="btn btn-danger">もっと見る</a>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="container pt-5">
+    <section class="container pt-3">
       <div class="d-flex justify-content-between align-items-center mb-4">
-        <h4 class="fw-bold">Damaged Places</h4>
-        <a href="#" class="text-muted text-decoration-none">See all</a>
+        <h5 class="fw-bold head-card">Damaged Places</h5>
+        <a href="#" class="text-muted text-decoration-none head-card">すべてを見る</a>
       </div>
-      <div class="card-grid">
-        <div class="activity-card">
-          <img src="img/eq1.jpg" alt="Cruises">
-          <div class="activity-title">Cruises</div>
+      <div class="row g-4">
+        <!-- Card 1 -->
+        <div class="col-sm-6 col-md-4">
+          <div class="activity-card">
+            <img src="img/eq1.jpg" alt="Cruises">
+            <div class="activity-title">Cruises</div>
+          </div>
         </div>
-        <div class="activity-card">
-          <img src="img/eq2.jpg" alt="Beach Tours">
-          <div class="activity-title">Beach Tours</div>
+        <!-- Card 2 -->
+        <div class="col-sm-6 col-md-4">
+          <div class="activity-card">
+            <img src="img/eq2.jpg" alt="Beach Tours">
+            <div class="activity-title">Beach Tours</div>
+          </div>
         </div>
-        <div class="activity-card">
-          <img src="img/eq3.jpg" alt="City Tours">
-          <div class="activity-title">City Tours</div>
+        <!-- Card 3 -->
+        <div class="col-sm-6 col-md-4">
+          <div class="activity-card">
+            <img src="img/eq3.jpg" alt="City Tours">
+            <div class="activity-title">City Tours</div>
+          </div>
         </div>
-        <div class="activity-card">
-          <img src="img/eq4.jpg" alt="Museum Tour">
-          <div class="activity-title">Museum Tour</div>
+        <!-- Card 4 -->
+        <div class="col-sm-6 col-md-4">
+          <div class="activity-card">
+            <img src="img/eq4.jpg" alt="Museum Tour">
+            <div class="activity-title">Museum Tour</div>
+          </div>
         </div>
-        <div class="activity-card">
-          <img src="img/eq5.jpg" alt="Food">
-          <div class="activity-title">Food</div>
+        <!-- Card 5 -->
+        <div class="col-sm-6 col-md-4">
+          <div class="activity-card">
+            <img src="img/eq5.jpg" alt="Food">
+            <div class="activity-title">Food</div>
+          </div>
         </div>
-        <div class="activity-card">
-          <img src="img/eq6.jpg" alt="Hiking">
-          <div class="activity-title">Hiking</div>
+        <!-- Card 6 -->
+        <div class="col-sm-6 col-md-4">
+          <div class="activity-card">
+            <img src="img/eq6.jpg" alt="Hiking">
+            <div class="activity-title">Hiking</div>
+          </div>
         </div>
       </div>
     </section>
 </div>
-<footer class="bg-dark text-light py-2">
-  <div class="container text-center">
-    © 2025 phwaythitsarkyaw. All rights reserved.
+<footer class="bg-dark text-light">
+  <div class="container text-center py-2">
+    <p class="pt-2">©phwaythitsarkyaw21@gmail.com. All rights reserved.</p>
   </div>
 </footer>    
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
